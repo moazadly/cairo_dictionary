@@ -62,7 +62,7 @@ function LastSection({ files, records, verb = false, value, value2 }) {
   };
 
   React.useEffect(() => {
-    if (diacriticFromStore.length > 0) {
+    if (diacriticFromStore?.length > 0) {
       setDiacritic(diacriticFromStore);
     }
   }, [diacriticFromStore]);
@@ -72,7 +72,7 @@ function LastSection({ files, records, verb = false, value, value2 }) {
   const isLoading = useSelector((state) => state.user.loading);
 
   React.useEffect(() => {
-    if (semanticFromStore.length > 0) {
+    if (semanticFromStore?.length > 0) {
       setSemantic(semanticFromStore);
     }
   }, [semanticFromStore]);
@@ -129,7 +129,7 @@ function LastSection({ files, records, verb = false, value, value2 }) {
       try {
         let updatedSemantic = await structuredClone(semantic);
 
-        for (let index = 0; index < files.length; index++) {
+        for (let index = 0; index < files?.length; index++) {
           const imageURL = await sendImages(files[index].image);
 
           const semanticObject = updatedSemantic[files[index].index];
@@ -144,7 +144,7 @@ function LastSection({ files, records, verb = false, value, value2 }) {
         }
 
         let updatedDiacritic = await structuredClone(diacritic);
-        for (let index = 0; index < records.length; index++) {
+        for (let index = 0; index < records?.length; index++) {
           const recordURL = await sendRecord(records[index]);
 
           updatedDiacritic[index].pronounciation = recordURL; // Update specific field
