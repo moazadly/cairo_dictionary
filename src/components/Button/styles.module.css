@@ -1,0 +1,6 @@
+@media print {
+  /* Hide elements with the .no-print class */
+  .no_print {
+    display: none;
+  }
+}

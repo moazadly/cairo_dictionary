@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0px;
+  font-family: "El Messiri", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+}
+@media print {
+  /* Hide elements with the .no-print class */
+  .no-print {
+    display: none;
+  }
+
+  /* Additional styling for print view */
+  body {
+    font-size: 1.6rem; /* Adjust font size for printing */
+  }
+}
